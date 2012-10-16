@@ -9,11 +9,11 @@
     Um Programa para execução de comandos remotos em diversos hosts
     simultaneamente. Útil para atualizações e instalação de pacotes nas várias
     máquinas de um laboratório. A comunicação com os hosts remotos (IPs
-    definidos no arquivo de configuração - "settings.py") deverá ser efetuada
-    através de uma conexão SSL criptografada com autenticação. Poderá ser
-    enviado um comando individual via linha de comando ou ser informado um
-    arquivo com uma série de comandos. O retorno dos comandos de cada host
-    serão armazenados num arquivo a medida que forem executados.
+    definidos no arquivo de configuração - "settings.py") é realizada através
+    de uma conexão SSL criptografada com autenticação. Deve ser enviado um
+    comando individual via linha de comando ou ser informado um arquivo com
+    uma série de comandos. O retorno dos comandos de cada host serão
+    armazenados num arquivo a medida que forem executados.
 '''
 
 import settings
@@ -182,15 +182,15 @@ if __name__ == '__main__':
     for i in settings.IP:
         if valida_ip(i):
             fila1.put(i)
-    else:
-        try:
-            arqlog = '{0} {1}.log'.format(i, datetime.now().strftime(
-                '%d-%m-%Y_%H-%M-%S'))
-            with open('{0}/{1}'.format(caminho, arqlog), 'wb') as arq:
-                arq.write('IP inválido : {0} !!!'.format(i))
+        else:
+            try:
+                arqlog = '{0} {1}.log'.format(i, datetime.now().strftime(
+                    '%d-%m-%Y_%H-%M-%S'))
+                with open('{0}/{1}'.format(caminho, arqlog), 'wb') as arq:
+                    arq.write('IP inválido : {0} !!!'.format(i))
 
-        except IOError:
-            sys.stderr.write('Houve um erro ao criar arquivo de Log!\n')
+            except IOError:
+                sys.stderr.write('Houve um erro ao criar arquivo de Log!\n')
 
     #Executa as threads para enviar os comandos
     print 'Tentativa de conexão nos "clientes" ...\n\n'

@@ -14,7 +14,9 @@ Descrição:
     
 Como Usar:
     1 - Configurar o arquivo settings.py do Servidor e do Cliente com as 
-    informações corretas.
+    informações corretas. A porta passada para "PORTASERVIDOR" deve ser a
+    mesma no settings.py do Cliente e no do Servidor. O mesmo é válido
+    para a "PORTACLIENTE".
     
     2 - Caso seja usado um arquivo com a listagem de comandos, este deve 
     seguir o seguinte formato:
@@ -25,8 +27,8 @@ Como Usar:
         comandoN
         
     3 - Execute o cliente.py nos hosts onde se deseja executar os comandos. O
-    cliente.py deve ser executado dentro da pasta Cliente que contém o 
-    certificado entre outros arquivos utilizados na execução.
+    cliente.py deve ser executado dentro da pasta corrente da aplicação que 
+    contém o certificado entre outros arquivos utilizados na execução.
         
         Ex:
             $chmod +x cliente.py
@@ -35,8 +37,8 @@ Como Usar:
     4 - Execute o servidor.py no host de onde se deseja enviar os comandos.
     O servidor.py deve receber o argumento "-c 'comando'" ou o argumento 
     "-a arquivo.txt". O servidor.py deve ser executado dentro da pasta 
-    Servidor que contém o certificado entre outros arquivos utilizados na 
-    execução.
+    corrente da aplicação que contém o certificado entre outros arquivos 
+    utilizados na execução.
         
         Ex:
             $chmod +x servidor.py
