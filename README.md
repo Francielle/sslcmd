@@ -3,12 +3,17 @@ sslcmd
 
 Um Programa para execução de comandos remotos em diversos hosts simultaneamente.
 
+
 Envio de Comandos Remotos com SSL
 
+
 Autor: Francielle Costa Salvador
+
 Data: 16/10/2012
 
+
 Descrição:
+
     Um Programa para execução de comandos remotos em diversos hosts
     simultaneamente. Útil para atualizações e instalação de pacotes nas várias
     máquinas de um laboratório. A comunicação com os hosts remotos é realizada
@@ -16,10 +21,13 @@ Descrição:
     enviado um comando individual via linha de comando ou ser informado um
     arquivo com uma série de comandos. O retorno dos comandos de cada host
     serão armazenados num arquivo a medida que forem executados.
+
     
 Como Usar:
+
     1 - Configurar o arquivo settings.py do Servidor e do Cliente com as 
     informações corretas.
+
     
     2 - Caso seja usado um arquivo com a listagem de comandos, este deve 
     seguir o seguinte formato:
@@ -28,6 +36,7 @@ Como Usar:
         comando2
         [...]
         comandoN
+
         
     3 - Execute o cliente.py nos hosts onde se deseja executar os comandos. O
     cliente.py deve ser executado dentro da pasta Cliente que contém o 
@@ -36,6 +45,7 @@ Como Usar:
         Ex:
             $chmod +x cliente.py
             $./cliente.py
+
     
     4 - Execute o servidor.py no host de onde se deseja enviar os comandos.
     O servidor.py deve receber o argumento "-c 'comando'" ou o argumento 
